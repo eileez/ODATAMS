@@ -1,0 +1,138 @@
+# author : Elizabeth Fu
+# elizabeth.wt.fu@gmail.com
+# Institut National Sciences Appliquées (INSA) Toulouse - Laboratoire d'Aérologie, Toulouse
+# june 2020 - sept 2020
+
+##############################################
+GUIDE algorithme detect_track_convective_cells_WT.py
+##############################################
+
+CONTEXTE ET OBJECTIFS :
+Identifier cellules convectives au sein de la tempête Adrian (Corse, 29 octobre 2018)
+Obtenir suivi spatio-temporel sur une heure
+
+SIMULATION UTILISEE :
+CNTRL, résolution horizontale : 3 km, résolution verticale : échelle "level" ou "level_w"
+
+ENTREES :
+sorties de simulation Méso-NH (fichiers netCDF)
+N1 = '061'
+N2 = '071'
+
+SORTIES :
+les informations trouvées sont écrites dans un fichier .txt "output_N1_N2.txt"
++ plots :
+    plot 3D objets détectés à t0
+    plot 3D objets détectés à t1
+
+################################################
+### ETAPE 1 :
+### DETECTION INSTANTANEE D'OBJETS À 2 INSTANTS
+T0 : heure pile
+T0+DELTAT : avec deltat entre 5 et 55 minutes si traceurs réinitialisés à chaqe heure
+
+time_ind = 0 ou 1
+
+    nb_features[time_ind] : nombre d'objets détectés à time_ind 
+
+    nb_features_solo[time_ind] : nb d'objets détectés à time_ind qui sont constitués que d'une seule particule 
+
+    num_features_solo[time_ind] : numéro des objets détectés à time_ind qui sont constitués que d'une seule particule
+
+    indices_obj_all_time_stamps[time_ind][obj_nb] : liste des indices de l'objet #obj_nb trouvé à time_ind
+    indices_obj_all_time_stamps[time_ind][obj_nb][particule_nb] : indice (k,j,i) de la particule #particule_nb de l'objet #obj_nb trouvé à time_ind
+
+    nb_particules_all_time_stamps[time_ind][obj_nb] : nb de particules contenues dans l'objet #obj_nb trouvé à time_ind
+
+    lgxt_obj[time_ind][obj_nb] : liste des valeurs de LGXT de chaque particule de l'objet #obj_nb trouvé à time_ind
+
+    lgyt_obj[time_ind][obj_nb]
+
+    lgzt_obj[time_ind][obj_nb]
+    
+    
+>>> RESULTS :
+    pour t0 et t0+deltat :
+        - nb d'objets détectés
+        - nb de particules de chaque objet
+        - volume occupé par l'objet par rapport au domaine de zoom et domaine complet
+        - volume de l'objet (longueur/largeur/hauteur)
+        - position de l'objet (valeurs extrêmes de LGXT/LGYT/LGZT et longitude/latitude/altitude)
+        - nb d'objets composés que d'une seule particule
+        - numéro des objets composé que d'une seule particule
+        
+>>> PLOTS :
+    - plot 3D tous objets détectés à t0
+    -              objets détectés à t0+deltat
+    - plot 2D (section horizontale à niveau modèle choisi) objets détectés à t0 + WT observé
+    -                                                      objets détectés à t0+deltat + WT observé
+
+### ETAPE 1.5 :
+### TRAJECTOIRE DES PARTICULES DES OBJETS DÉTECTÉS À T+DELTAT
+Pour chaque objet détecté à t+deltat, on prend chacune des particules et on regarde sa position à t0
+    
+    good_lgxt[time_ind][obj_nb] : liste des valeurs LGXT des particules de l'obj #obj_nb à time_ind
+    good_lgxt[time_ind][obj_nb][particule_nb]
+    
+    good_lgyt[time_ind][obj_nb]
+    good_lgzt[time_ind][obj_nb]
+    
+    
+>>> PLOTS :
+    - plot 3D trajectoires entre t0 et t0+deltat des particules appartenant aux objets détectés à t0+deltat
+    - plot 3D trajectoires entre t0 et t+deltat des particules de chaque objet détecté à t0+deltat
+    - plot 2D trajectoires (vue LGZT, LGYT) entre t0 et t1 des particules de chaque objet détecté à t0+deltat
+
+    
+### ETAPE 2 :
+### IDENTIFICATION DES STRUCTURES REPRÉSENTANTS LE MÊME OBJET MAIS À 2 INSTANTS
+
+    ratios_array[obj_nb, z_index, y_index, x_index] :
+        ratios_array[obj_nb, :,:,:] : maillage 3D qui marque la position d'origne de toutes les particules de l'objet #obj_nb détecté à t+deltat
+        ex : si une particule de l'objet #2 détecté à t+deltat vient de (0,0,0) (pt de maillage le plus proche de sa réelle position)
+             alors ratios_array[1,0,0,0] = 1
+
+    num_obj_with_origin : liste des numéros d'objets détectés à t+deltat qui ont un lien avec un/des objets détectés à t0
+        ex: [1,2]
+        veut dire que l'objet #1 détecté à t+deltat a des particules qui proviennent d'objet(s) détecté(s) à t0
+        veut dire que l'objet #2 détecté à t+deltat a des particules qui proviennent d'objet(s) détecté(s) à t0
+        
+    indices_positive_ratios[obj_nb] : donne liste des indices (pts de maillage) correspondant à la position d'origne des particules de l'objet #obj_nb détecté à t+deltat 
+        ex : indices_positive_ratios[0] = [(0,0,0), (1,2,3), (1,2,3), (12,52,8), (13,20,65)] (veut dire que l'objet #1 détecté à t0+deltat possède 5 particules et voilà leur position (pt de maillage le plus proche) à t0)
+             indices_positive_ratios[1] = [(0,3,3), (8,33,2), (48,6,9)]    
+    
+    indices_double_cond[obj_nb] : liste des indices pour lesquels coïncident une origine de particule à t0 ET un objet détecté à t0
+        ex : indices_double_cond[0] = [(1,2,3), (12,52,8)]
+             indices_double_cond[1] = [(0,3,3)]
+             
+    nb_particules_IN[obj_nb] : liste de nb de particules de l'objet #obj_nb qui a une origine à t0
+        ex : nb_particules_IN[0] = [2,1]
+        veut dire que pour l'objet 1, il y a 2 particules qui sont originaires du point de maillage (1,2,3) à t0, pt de maillage coincide aussi un objet détecté à t0
+        veut dire que pour l'objet 1, il y a 1 particule qui est originaire du point de maillage (12,58,8) à t0, pt de maillage pour lequel coincide aussi un objet détecté à t0
+                      
+        nb_particules_IN[1] = [3]
+        veut dire que pour l'objet #2 détecté à t0+deltat, il y a 3 particules qui sont originaires du point de maillage (0,3,3), pt de maillage pour lequel coincide aussi un objet détecté à t0
+             
+    num_origin_all_objects[obj_nb] : liste des numéros d'objets d'origine pour chaque particule de l'objet #obj_nb qui ont une origine à t0
+        ex : num_origin_all_objects[0] = [1,13]
+             veut dire que le point (0,0,0) est contenu dans l'objet #1 détecté à t0, le point (12,52,8) est contenu dans l'objet #13 détecté à t0 
+             
+             num_origin_all_objects[1] = [12]
+             veut dire que le point (0,3,3) est contenu dans l'objet #12 détecté à t0
+    
+
+    lgxt_positive_ratios[obj_nb] : liste de valeurs LGXT liés aux indices d'origine des particules de l'objet #obj_nb (on considère TOUTES les particules de l'objet #obj_nb, qu'elles soient originaires d'objet(s) à t0 ou non)
+    lgyt_positive_ratios[obj_nb]
+    lgzt_positive_ratios[obj_nb]
+    -> donne les positions d'origine des particules de l'objet #obj_nb détecté à t+deltat
+    /!\ étant donné que la véritable position est réinterpolée sur le pt de maillage le plus proche, la longueur de la liste n'est pas égale aux nb de particules de l'objet qui ont une origine à t0
+    
+    
+>>> RESULTS :
+    - nb d'objets détectés à t0+deltat
+    pour chaque objet :
+        - nb de particules
+        - nb et proportion de particules ayant des originaires d'objets détectés à t0
+        - détail du numéro de l'objet d'origine et le nb de particules originaires de cet objet
+
+#####################################################

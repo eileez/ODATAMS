@@ -1,0 +1,284 @@
+#######################
+OPEN FILE AND LOAD DATA
+#######################
+CONVECTIVE CELLS DETECTION AT T0 :  ['2018-10-29T15:00:00.000000000'] , AND T+DELTAT :  ['2018-10-29T15:10:00.000000000']
+...OK
+---------------------------------------------------
+INITIAL GEOGRAPHICAL DOMAIN FOR PARTICULE SELECTION
+---------------------------------------------------
+Selected domain :  NORTH-CORSICA_ITALIA
+...OK
+---------------------------
+INITIALISATION OF VARIABLES
+---------------------------
+2018-10-29T15:00:00.000000000
+reading WT , LGXT, LGYT, LGZT
+2018-10-29T15:10:00.000000000
+reading WT , LGXT, LGYT, LGZT
+...OK
+ 
+#####################################
+1. DETECT OBJECTS FOR EACH TIME STAMP
+#####################################
+time stamp :  0
+detect and label objects...
+number of objects found :  6
+...OK
+find locations of objects...
+ 
+time stamp :  1
+detect and label objects...
+number of objects found :  7
+...OK
+find locations of objects...
+ 
+...OK
+---------------
+>>> RESULTS <<<
+---------------
+time stamp :  0
+object # 1
+    NUMBER OF PARTICLES :  18
+        ( 0.022104332449160036 % of zoom domain)
+        ( 8.272557610091196e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  1 (m)
+        width2 :  3001 (m)
+        height :  955.8979800111149 (m)
+ 
+    LOCALISATION : 
+        LGXT :  948000  -  948000 (m)
+        longitude :  9.562702587275046  -  9.562702587275046 (°E)
+        LGYT :  900000  -  903000 (m)
+        latitude :  43.321411150457216  -  43.347816723948405 (°N)
+        LGZT :  399.1545082831001 -  1354.052488294215 (m)
+ 
+object # 2
+    NUMBER OF PARTICLES :  20
+        ( 0.024560369387955593 % of zoom domain)
+        ( 9.191730677879107e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  3001 (m)
+        width2 :  3001 (m)
+        height :  985.4807821010855 (m)
+ 
+    LOCALISATION : 
+        LGXT :  951000  -  954000 (m)
+        longitude :  9.599005980002469  -  9.635309372729889 (°E)
+        LGYT :  906000  -  909000 (m)
+        latitude :  43.374210815397866  -  43.40059342419969 (°N)
+        LGZT :  524.9769550225511 -  1509.4577371236367 (m)
+ 
+object # 3
+    NUMBER OF PARTICLES :  12
+        ( 0.014736221632773357 % of zoom domain)
+        ( 5.5150384067274646e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  1 (m)
+        width2 :  3001 (m)
+        height :  487.8662488918999 (m)
+ 
+    LOCALISATION : 
+        LGXT :  945000  -  945000 (m)
+        longitude :  9.526399194547624  -  9.526399194547624 (°E)
+        LGYT :  894000  -  897000 (m)
+        latitude :  43.26856555982335  -  43.29499409554023 (°N)
+        LGZT :  597.4746505248063 -  1084.3408994167062 (m)
+ 
+object # 4
+    NUMBER OF PARTICLES :  6
+        ( 0.0073681108163866785 % of zoom domain)
+        ( 2.7575192033637323e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  3001 (m)
+        width2 :  1 (m)
+        height :  497.75425701602717 (m)
+ 
+    LOCALISATION : 
+        LGXT :  972000  -  975000 (m)
+        longitude :  9.853129729094423  -  9.889433121821845 (°E)
+        LGYT :  918000  -  918000 (m)
+        latitude :  43.4796723488104  -  43.4796723488104 (°N)
+        LGZT :  2299.566661139701 -  2796.320918155728 (m)
+ 
+object # 5
+    NUMBER OF PARTICLES :  38
+        ( 0.04666470183711563 % of zoom domain)
+        ( 0.00017464288287970305 % of full domain)
+ 
+    SHAPE : 
+        width1 :  15001 (m)
+        width2 :  12001 (m)
+        height :  1995.0183359456332 (m)
+ 
+    LOCALISATION : 
+        LGXT :  960000  -  975000 (m)
+        longitude :  9.707916158184734  -  9.889433121821845 (°E)
+        LGYT :  894000  -  906000 (m)
+        latitude :  43.26856555982335  -  43.374210815397866 (°N)
+        LGZT :  6087.281710673256 -  8081.30004661889 (m)
+ 
+object # 6
+    NUMBER OF PARTICLES :  1 /!\ composed of only 1 particle !
+        ( 0.0012280184693977798 % of zoom domain)
+        ( 4.595865338939554e-06 % of full domain)
+ 
+    SHAPE : 
+        width1 :  1 (m)
+        width2 :  1 (m)
+        height :  1.0 (m)
+ 
+    LOCALISATION : 
+        LGXT :  978000  -  978000 (m)
+        longitude :  9.925736514549268  -  9.925736514549268 (°E)
+        LGYT :  891000  -  891000 (m)
+        latitude :  43.24212554394262  -  43.24212554394262 (°N)
+        LGZT :  7581.30004661889 -  7581.30004661889 (m)
+ 
+- - -
+time stamp :  1
+object # 1
+    NUMBER OF PARTICLES :  27
+        ( 0.033156498673740056 % of zoom domain)
+        ( 0.00012408836415136795 % of full domain)
+ 
+    SHAPE : 
+        width1 :  9001 (m)
+        width2 :  3001 (m)
+        height :  616.3003388335705 (m)
+ 
+    LOCALISATION : 
+        LGXT :  963000  -  972000 (m)
+        longitude :  9.744219550912156  -  9.853129729094423 (°E)
+        LGYT :  921000  -  924000 (m)
+        latitude :  43.506009021162605  -  43.532334207987496 (°N)
+        LGZT :  597.4746505248063 -  1212.7749893583768 (m)
+ 
+object # 2
+    NUMBER OF PARTICLES :  4
+        ( 0.004912073877591119 % of zoom domain)
+        ( 1.8383461355758216e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  1 (m)
+        width2 :  1 (m)
+        height :  291.36052025608217 (m)
+ 
+    LOCALISATION : 
+        LGXT :  951000  -  951000 (m)
+        longitude :  9.599005980002469  -  9.599005980002469 (°E)
+        LGYT :  915000  -  915000 (m)
+        latitude :  43.45332419148688  -  43.45332419148688 (°N)
+        LGZT :  677.222115577287 -  967.5826358333692 (m)
+ 
+object # 3
+    NUMBER OF PARTICLES :  2
+        ( 0.0024560369387955595 % of zoom domain)
+        ( 9.191730677879108e-06 % of full domain)
+ 
+    SHAPE : 
+        width1 :  1 (m)
+        width2 :  1 (m)
+        height :  240.97790194010986 (m)
+ 
+    LOCALISATION : 
+        LGXT :  972000  -  972000 (m)
+        longitude :  9.853129729094423  -  9.853129729094423 (°E)
+        LGYT :  924000  -  924000 (m)
+        latitude :  43.532334207987496  -  43.532334207987496 (°N)
+        LGZT :  2299.566661139701 -  2539.544563079811 (m)
+ 
+object # 4
+    NUMBER OF PARTICLES :  8
+        ( 0.009824147755182238 % of zoom domain)
+        ( 3.676692271151643e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  6001 (m)
+        width2 :  3001 (m)
+        height :  697.7235429104221 (m)
+ 
+    LOCALISATION : 
+        LGXT :  966000  -  972000 (m)
+        longitude :  9.780522943639578  -  9.853129729094423 (°E)
+        LGYT :  921000  -  924000 (m)
+        latitude :  43.506009021162605  -  43.532334207987496 (°N)
+        LGZT :  3679.6169433646446 -  4376.340486275067 (m)
+ 
+object # 5
+    NUMBER OF PARTICLES :  8
+        ( 0.009824147755182238 % of zoom domain)
+        ( 3.676692271151643e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  3001 (m)
+        width2 :  3001 (m)
+        height :  1501.0 (m)
+ 
+    LOCALISATION : 
+        LGXT :  960000  -  963000 (m)
+        longitude :  9.707916158184734  -  9.744219550912156 (°E)
+        LGYT :  906000  -  909000 (m)
+        latitude :  43.374210815397866  -  43.40059342419969 (°N)
+        LGZT :  6581.30004661889 -  8081.30004661889 (m)
+ 
+object # 6
+    NUMBER OF PARTICLES :  8
+        ( 0.009824147755182238 % of zoom domain)
+        ( 3.676692271151643e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  3001 (m)
+        width2 :  6001 (m)
+        height :  1001.0 (m)
+ 
+    LOCALISATION : 
+        LGXT :  981000  -  984000 (m)
+        longitude :  9.96203990727669  -  9.998343300004112 (°E)
+        LGYT :  966000  -  972000 (m)
+        latitude :  43.899680555395044  -  43.951974750169654 (°N)
+        LGZT :  7081.30004661889 -  8081.30004661889 (m)
+ 
+object # 7
+    NUMBER OF PARTICLES :  18
+        ( 0.022104332449160036 % of zoom domain)
+        ( 8.272557610091196e-05 % of full domain)
+ 
+    SHAPE : 
+        width1 :  6001 (m)
+        width2 :  9001 (m)
+        height :  1001.0 (m)
+ 
+    LOCALISATION : 
+        LGXT :  975000  -  981000 (m)
+        longitude :  9.889433121821845  -  9.96203990727669 (°E)
+        LGYT :  966000  -  975000 (m)
+        latitude :  43.899680555395044  -  43.97810460754922 (°N)
+        LGZT :  8581.30004661889 -  9581.30004661889 (m)
+ 
+- - -
+number of objects detected at t0 that are composed of only 1 particle :  [6] , TOTAL : 1
+number of objects detected at t+deltat that are composed of only 1 particle :  [] , TOTAL : 0
+-------------------------------------------------------------------------------------
+FIND TRAJECTORIES DURING [T0 ; T+DELTAT] OF PARTICLES OF OBJECTS DETECTED AT T+DELTAT
+-------------------------------------------------------------------------------------
+get real positions of all particles from objects detected at t+deltat
+get positions at t 0
+get positions at t 1
+...OK
+ 
+##########################################################
+2. OBJET IDENTIFICATION BETWEEN THE 2 SELECTED TIME STAMPS
+##########################################################
+--------------------------------------------------------------------------
+GET ORIGINAL POSITION (AT T0) OF PARTICLES OF OBJECTS DETECTED AT T+DELTAT
+--------------------------------------------------------------------------
+...OK
+---------------
+>>> RESULTS <<<
+---------------
+number of objets detected at t+deltat that have particles originating from objets detected at t0 :  []
