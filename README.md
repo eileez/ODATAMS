@@ -4,6 +4,7 @@ Objects Detection and Tracking Algorithm in MesoNH Simulations
 L'objectif de ce projet est le développement d'une approche globale de détection et de suivi automatique d'objets (structures météorologiques) au sein de simulations atmosphériques du modèle de recherche Méso-NH.
 
 Par approche "globale", nous souhaitons que l'algorithme développé puisse être appliqué à tout type d'objets (nuages, cellules convectives etc.) et à des résolutions variables. De plus, en vue de réduire la quantités de données des simulations atmosphériques, nous souhaitons que l'algorithme soit intégrable en tant que traitement online au sein de Méso-NH. Si possible, le code pourrait être parallélisable.
+
 In fine, cet algorithme permettrait d’extraire et retranscrire clairement les informations utiles d’une simulation atmosphérique. L’utilisation répandue d’un tel algorithme parmi la communauté atmosphérique permettrait un gain de temps, lisibilité, compréhension et de quantité de données liés aux simulations atmosphériques.
 
 ## Méthodologie
