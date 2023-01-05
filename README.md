@@ -24,7 +24,7 @@ Perspectives
 - application à d'autres objets (différente échelle spatiale et temporelle)
 
 ## Contact
-- Elizabeth Fu, Etudiante-Ingénieure en Mathématiques Appliquées et Méthodes Numériques à l'INSA Toulouse : elizabeth.wt.fu@gmail.com
+- Elizabeth Fu, Ingénieure en Mathématiques Appliquées : elizabeth.wt.fu@gmail.com
 - Florian Pantillon, chercheur CNRS au Laboratoire d'Aérologie UMR 5560 : florian.pantillon@aero.obs-mip.fr
 
 ## Références
